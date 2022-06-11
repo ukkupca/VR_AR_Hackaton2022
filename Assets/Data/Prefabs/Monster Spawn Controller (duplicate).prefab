@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2619241986366249964}
   - component: {fileID: 2476630439752866642}
   m_Layer: 0
-  m_Name: Monster Spawn Controller
+  m_Name: Monster Spawn Controller (duplicate)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
