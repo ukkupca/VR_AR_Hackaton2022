@@ -7,12 +7,12 @@ public class Wolfy : MonoBehaviour
 
     public GameObject player;
 
-    public Rigidbody playerRigidy;
+    public Rigidbody SlimeyRigidy;
 
-    float timer = 0.0f;
+    public float timer = 0.0f;
     public float velocityX, velocityY;
-    float Rotation;
-    bool BattleTurn = false;
+    public float Rotation;
+    public bool BattleTurn = false;
     public float huntingRadius = 24;
 
     public string Namey;
@@ -38,7 +38,6 @@ public class Wolfy : MonoBehaviour
     void Start()
     {
         wolfystaty = WolfyStates.Idle;
-        velocityX = 10;
     }
 
     // Update is called once per frame
@@ -50,28 +49,28 @@ public class Wolfy : MonoBehaviour
         {
             case WolfyStates.Idle:
 
-                if(timer % 200 == 0)
+                if((int)timer % 20 == 0)
                 {
                     wolfystaty = WolfyStates.Walking;
 
-                    if((timer / 40)% 2 == 0)
+                    if(((int)timer / 4)% 2 == 0)
                     {
-                        Rotation = ((timer / 40) % 360) * -1;
+                        Rotation = (((int)timer / 4) % 360) * -1;
                     }
                     else
                     {
-                        Rotation = ((timer / 40) % 360);
+                        Rotation = (((int)timer /4) % 360);
                     }
                 }
                 this.transform.rotation.Set(Rotation, this.transform.rotation.y, this.transform.rotation.z, this.transform.rotation.w);
-                timer = 0;
+                //timer = 0;
                 break;
 
             case WolfyStates.Walking:
 
-                if (timer % 200 != 0)
+                if ((int)timer % 20 != 0)
                 {
-                    playerRigidy.AddForce(new Vector3(velocityX, 0, 0));
+                    SlimeyRigidy.AddForce(new Vector3(velocityX, 0, 0));
                     if (isHumanNearby())
                     {
 
