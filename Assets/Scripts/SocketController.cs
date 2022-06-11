@@ -23,6 +23,7 @@ public class SocketController : MonoBehaviour
 
         objectInitialParent = interactable.transform.parent;
         interactable.transform.parent = transform;
+        interactable.transform.localScale = Vector3.one;
         Debug.Log("SelectEntered");
     }
 
