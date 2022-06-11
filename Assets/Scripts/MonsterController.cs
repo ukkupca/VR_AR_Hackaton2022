@@ -52,12 +52,12 @@ public class MonsterController : MonoBehaviour
         {
             if (destinationAttempts == 10)
             {
-                Debug.LogError("Destination " + destination.ToString() + "was not reachable for " + gameObject.name + " 10 times!");
+                //Debug.LogError("Destination " + destination.ToString() + "was not reachable for " + gameObject.name + " 10 times!");
                 return;
             }
 
             destinationAttempts++;
-            Debug.LogWarning("Destination " + destination.ToString() + " was not reachable for " + gameObject.name);
+            //Debug.LogWarning("Destination " + destination.ToString() + " was not reachable for " + gameObject.name);
 
             SetDestination();
         }

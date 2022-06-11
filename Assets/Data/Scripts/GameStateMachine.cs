@@ -13,6 +13,8 @@ public class GameStateMachine : MonoBehaviour
     public AudioClip NightMusic;
     public AudioClip BattleMusic;
     public AudioClip PanicMusic;
+    public Material DaySkybox;
+    public Material NightSkybox;
 
     public float ingameTimer = 0;
     float previousTime = 0;
@@ -76,18 +78,20 @@ public class GameStateMachine : MonoBehaviour
             InitMusic = false;
         }
 
-        if(((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
+        if(((int)ingameTimer % 200 == 0) && ((int)previousTime != (int)ingameTimer))
         {
             // Daytime
             if (dayLight != DayNight.Day)
             {
                 dayLight = DayNight.Day;
                 Music.PlayOneShot(DayMusic);
+                RenderSettings.skybox = DaySkybox;
             }
             else
             {
                 dayLight = DayNight.Night;
                 Music.PlayOneShot(NightMusic);
+                RenderSettings.skybox = NightSkybox;
             }
 
 
