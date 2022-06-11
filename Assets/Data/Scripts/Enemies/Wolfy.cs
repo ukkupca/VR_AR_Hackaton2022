@@ -95,10 +95,7 @@ public class Wolfy : MonoBehaviour
 
             case WolfyStates.Charging:
                 // Charge towards the player
-                //if() ... collided wtih player, battle
-                //{
-
-                //}
+                
                 break;
 
             case WolfyStates.Battle:
@@ -157,5 +154,14 @@ public class Wolfy : MonoBehaviour
             return false;
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if(collision.gameObject.TryGetComponent<Tomogochi>(out Tomogochi Tomy))
+        {
+            GameStateMachine.instance.setBattle(Tomy, this);
+        }
     }
 }

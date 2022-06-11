@@ -65,7 +65,20 @@ public class Tomogochi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // This part here takes care of the level up, and exp calculation
+        if(EXP <= 0)
+        {
+            LEVEL += 1;
+            int nextEXP = (int)Mathf.Pow(2, LEVEL) + 10 * LEVEL;
+            NextLevel += nextEXP;
+
+            HP += (int)Random.Range(0, 5);
+            STR += (int)Random.Range(0, 5);
+            AGI += (int)Random.Range(0, 5);
+            DEF += (int)Random.Range(0, 5);
+            FOODCAP += (int)Random.Range(0, 10);
+        }
+
         switch(currentTomyState)
         {
             case TomyStates.Idle:
