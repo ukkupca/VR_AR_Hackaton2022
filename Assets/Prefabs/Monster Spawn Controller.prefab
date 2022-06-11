@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3779913999145675882}
-  - component: {fileID: 3635349618480327892}
+  - component: {fileID: -4733673934747771187}
   m_Layer: 0
   m_Name: Monster Spawn Controller
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3635349618480327892
+--- !u!114 &-4733673934747771187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,3 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefabs:
   - {fileID: 10374923663005777, guid: 779a321cfa5d6ca4a994d1a7aa50f2f7, type: 3}
+  - {fileID: 6669289854669027610, guid: 36bc557e35d8b7148b4490c8e3faeed2, type: 3}
+  - {fileID: 5699537823769200154, guid: efb61d110aaf79a479165e6ddd4e1c7a, type: 3}
+  - {fileID: 1485011874160760762, guid: 772a0470bde0c7c489ebde224968404a, type: 3}
+  - {fileID: 7955532374799166631, guid: 1a2809ee918dfd64a8bff71a966e9c62, type: 3}
+  - {fileID: 5027557368052983382, guid: d54e33feae7ab324f8a59aa923afda01, type: 3}
