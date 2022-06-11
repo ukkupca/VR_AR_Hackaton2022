@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrain: {fileID: 8309214546053407940}
   treeColliders: []
+  foodPrefab: {fileID: 400686533885269847, guid: 54335bc91df314221b18ce99e6fea799, type: 3}
 --- !u!1001 &3959755920378007276
 PrefabInstance:
   m_ObjectHideFlags: 0
