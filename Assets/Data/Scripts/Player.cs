@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public string namey;
     public int HP;
+    public bool TomyIsAlive = false;
 
     // Start is called before the first frame update
     void Start()
