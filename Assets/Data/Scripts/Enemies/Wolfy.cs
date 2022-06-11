@@ -71,7 +71,7 @@ public class Wolfy : MonoBehaviour
                 {
                     //this.transform.position.x += velocityX;
                     //this.transform.position.y += velocityY;
-                    if(isHumanNearby(player.transform.position.x, player.transform.position.y))
+                    if(isHumanNearby())
                     {
 
                         wolfystaty = WolfyStates.Charging;
@@ -135,9 +135,9 @@ public class Wolfy : MonoBehaviour
         }
     }
 
-    bool isHumanNearby(float posx, float posy)
+    bool isHumanNearby()
     {
-        float tempx = this.transform.position.x;
+        /*float tempx = this.transform.position.x;
         float tempy = this.transform.position.y;
         if (Mathf.Sqrt(((tempx - posx) * (tempx - posx)) + ((tempy - posy) * (tempy - posy))) <= huntingRadius)
         {
@@ -146,6 +146,16 @@ public class Wolfy : MonoBehaviour
         else
         {
             return false;
+        }*/
+
+        if(Vector3.Distance(player.transform.position, this.transform.position) < huntingRadius)
+        {
+            return true;
         }
+        else
+        {
+            return false;
+        }
+
     }
 }
