@@ -75,7 +75,7 @@ public class GameStateMachine : MonoBehaviour
             InitMusic = false;
         }
 
-        if(((int)ingameTimer % 500 == 0) && ((int)previousTime != (int)ingameTimer))
+        if(((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
         {
             // Daytime
             if (dayLight != DayNight.Day)
