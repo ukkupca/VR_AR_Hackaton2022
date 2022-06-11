@@ -128,6 +128,14 @@ PrefabInstance:
       propertyPath: Namey
       value: Slimey
       objectReference: {fileID: 0}
+    - target: {fileID: 3944353982584613929, guid: 0699e085c3e8fce4dac929cc6b8a0712, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2448310150738542280, guid: cdfe35da0050c614bb0c55a9c0210583, type: 3}
+    - target: {fileID: 3944353982584613929, guid: 0699e085c3e8fce4dac929cc6b8a0712, type: 3}
+      propertyPath: SlimeyRigidy
+      value: 
+      objectReference: {fileID: 7845126402572820274}
     - target: {fileID: 7818383729943866420, guid: 0699e085c3e8fce4dac929cc6b8a0712, type: 3}
       propertyPath: m_Name
       value: Slime Variant
@@ -155,5 +163,10 @@ BoxCollider:
 --- !u!4 &5216977836619607569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 546180766034635158, guid: 0699e085c3e8fce4dac929cc6b8a0712, type: 3}
+  m_PrefabInstance: {fileID: 5760668183030204295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &7845126402572820274 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2534820519951014069, guid: 0699e085c3e8fce4dac929cc6b8a0712, type: 3}
   m_PrefabInstance: {fileID: 5760668183030204295}
   m_PrefabAsset: {fileID: 0}
