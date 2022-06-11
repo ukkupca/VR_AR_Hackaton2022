@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrain: {fileID: 8309214546053407940}
+  treeColliders: []
 --- !u!1001 &3959755920378007276
 PrefabInstance:
   m_ObjectHideFlags: 0
