@@ -20,6 +20,8 @@ public class ItemHandler : MonoBehaviour
 
     Item[,] Inventory = new Item[9,4];
 
+    GameObject[] ItemPrefab = new GameObject[30];
+
 
 
     // Start is called before the first frame update

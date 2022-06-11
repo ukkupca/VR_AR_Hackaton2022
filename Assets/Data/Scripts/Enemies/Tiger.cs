@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Tiger : MonoBehaviour
 {
-
-    public string namey;
-    public int HP;
-
     // Start is called before the first frame update
     void Start()
     {
