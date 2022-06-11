@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameStateMachine : MonoBehaviour
 {
+
+
+
     float ingameTimer = 0;
 
     public enum mainGameStates
