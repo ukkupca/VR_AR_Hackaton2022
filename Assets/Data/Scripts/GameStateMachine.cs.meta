@@ -3,7 +3,12 @@ guid: c91d5b8eced44254293effd931530445
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Music: {instanceID: 0}
+  - DayMusic: {fileID: 8300000, guid: cae6cf9c834bdcf4082c3d642e8fd17a, type: 3}
+  - NightMusic: {fileID: 8300000, guid: dc17c62a1c8f23843a55f438563b50cd, type: 3}
+  - BattleMusic: {fileID: 8300000, guid: cf6152ae60fa4cf4fbe6d65bbdc97b67, type: 3}
+  - PanicMusic: {fileID: 8300000, guid: 93d16b2626a43534aa7f9d01d84c3f6b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -17,7 +17,7 @@ public class Tomogochi : MonoBehaviour
 {
     public string namey;
     public int HP;
-    public int AGE;
+    public int ENERGY;
     public int FOOD;
     public int FOODCAP;
     public int STR;
@@ -66,13 +66,14 @@ public class Tomogochi : MonoBehaviour
     void Update()
     {
         // This part here takes care of the level up, and exp calculation
-        if(EXP <= 0)
+        if(NextLevel <= 0)
         {
             LEVEL += 1;
             int nextEXP = (int)Mathf.Pow(2, LEVEL) + 10 * LEVEL;
             NextLevel += nextEXP;
 
             HP += (int)Random.Range(0, 5);
+            ENERGY += (int)Random.Range(0, 5);
             STR += (int)Random.Range(0, 5);
             AGI += (int)Random.Range(0, 5);
             DEF += (int)Random.Range(0, 5);
