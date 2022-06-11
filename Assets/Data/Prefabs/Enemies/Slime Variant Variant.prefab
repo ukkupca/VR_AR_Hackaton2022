@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4887771295916462242, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0221138
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887771295916462242, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7056141
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887771295916462242, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.60340023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4887771295916462242, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7452836497052115329, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452836497052115329, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8285954360363242781, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
       propertyPath: Namey
       value: Slimezy
@@ -74,6 +82,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2936571325032551680, guid: 31153123fdb33624fb299dab7b3402c8, type: 3}
   m_PrefabInstance: {fileID: 2946506442769206609}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &5308703062827767036
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10374923663005777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!195 &7307697693187171855
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -92,7 +113,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 0.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
