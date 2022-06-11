@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Wolfy : MonoBehaviour
 {
-
-    public GameObject player;
-
     public Rigidbody SlimeyRigidy;
+
+    public Player player;
 
     public float timer = 0.0f;
     public float velocityX, velocityY;
@@ -71,12 +70,11 @@ public class Wolfy : MonoBehaviour
                 if ((int)timer % 20 != 0)
                 {
                     SlimeyRigidy.AddForce(new Vector3(velocityX, 0, 0));
-                    if (isHumanNearby())
+
+                    /*if (isHumanNearby())
                     {
-
                         wolfystaty = WolfyStates.Charging;
-
-                    }
+                    }*/
                 }
                 else
                 {
@@ -132,7 +130,7 @@ public class Wolfy : MonoBehaviour
         }
     }
 
-    bool isHumanNearby()
+   /*bool isHumanNearby()
     {
         /*float tempx = this.transform.position.x;
         float tempy = this.transform.position.y;
@@ -145,7 +143,7 @@ public class Wolfy : MonoBehaviour
             return false;
         }*/
 
-        if(Vector3.Distance(player.transform.position, this.transform.position) < huntingRadius)
+       /*f(Vector3.Distance(player.transform.position, this.transform.position) < huntingRadius)
         {
             return true;
         }
@@ -154,14 +152,25 @@ public class Wolfy : MonoBehaviour
             return false;
         }
 
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
         if(collision.gameObject.TryGetComponent<Tomogochi>(out Tomogochi Tomy))
         {
-            GameStateMachine.instance.setBattle(Tomy, this);
+            if (Tomy.currentTomyState == Tomogochi.TomyStates.Death)
+            {
+                if (collision.gameObject.TryGetComponent<Player>(out Player playky))
+                {
+                    GameStateMachine.instance.setSurvival(playky, this);
+                }
+            }
+            else
+            {
+                GameStateMachine.instance.setBattle(Tomy, this);
+            }
+            
         }
     }
 }

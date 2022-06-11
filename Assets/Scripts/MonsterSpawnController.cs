@@ -15,7 +15,6 @@ public class MonsterSpawnController : MonoBehaviour
             {
                 Vector3 spawnPos = new Vector3(0f, 1f, 0f) + RandomPointOnSphereEdge(i * 100, (i + 1) * 100);
                 GameObject spawnedMob = Instantiate(monsterPrefabs[Random.Range(0, monsterPrefabs.Count)], spawnPos, Quaternion.identity);
-                spawnedMob.GetComponent<Wolfy>().player = GameObject.Find("Player");
             }
         }
     }

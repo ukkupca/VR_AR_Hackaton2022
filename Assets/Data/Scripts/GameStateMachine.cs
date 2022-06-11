@@ -33,7 +33,8 @@ public class GameStateMachine : MonoBehaviour
         Attack,
         Guard,
         Item,
-        Run
+        Run,
+        Waiting
     }
 
     public enum DayNight
@@ -135,6 +136,8 @@ public class GameStateMachine : MonoBehaviour
         // Show GUI
 
 
+
+
         switch (battyActiony)
         {
             case BattleActions.Attack:
@@ -152,12 +155,22 @@ public class GameStateMachine : MonoBehaviour
             case BattleActions.Run:
 
                 break;
+            case BattleActions.Waiting:
+                // Do nothing yet
+                break;
+
         }
     }
 
     public void setBattle(Tomogochi Tomy, Wolfy Enemy)
     {
         Debug.Log($"Start battle between {Tomy}/ {Enemy}");
+
+    }
+
+    public void setSurvival(Player playky, Wolfy Enemy)
+    {
+        Debug.Log($"Start battle between {playky}/ {Enemy}");
     }
 
 
