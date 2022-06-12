@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,11 +5,6 @@ public class MonsterController : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent = default;
     private int destinationAttempts = 0;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -40,6 +33,12 @@ public class MonsterController : MonoBehaviour
     private void SetDestination()
     {
         Vector3 destination = transform.position + RandomPointOnCircleEdge(3, 5);
+        //Vector3 direction = Vector3.Normalize(Vector3.zero - destination);
+
+        //if (Mathf.Abs(Vector3.Distance(destination, Vector3.zero)) < 100f)
+        //{
+        //    destination = direction * 10f;
+        //} 
 
         NavMeshPath path = new NavMeshPath();
         navMeshAgent.CalculatePath(destination, path);
