@@ -257,6 +257,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5131776854917683481, guid: 93193027a4e5d41428fdd6ac8ca2c0c7, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 3633515091289267262, guid: 93193027a4e5d41428fdd6ac8ca2c0c7, type: 3}
       propertyPath: m_Name
       value: Tomogochi
