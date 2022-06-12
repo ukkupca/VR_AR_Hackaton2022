@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08276071, g: 0.036200296, b: 0.13373403, a: 1}
+  m_IndirectSpecularColor: {r: 0.10814689, g: 0.067819454, b: 0.15441503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,6 +306,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8402718973598660194, guid: 93193027a4e5d41428fdd6ac8ca2c0c7, type: 3}
+      propertyPath: xrRig
+      value: 
+      objectReference: {fileID: 788601391}
+    - target: {fileID: 8402718973598660194, guid: 93193027a4e5d41428fdd6ac8ca2c0c7, type: 3}
       propertyPath: hpColor
       value: 
       objectReference: {fileID: 1222225386}
@@ -489,6 +493,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &788601391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4107318654674875849, guid: 5863b0602cbb02b479431400f4489c68, type: 3}
+  m_PrefabInstance: {fileID: 959068334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &860238813 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4647281789310958729, guid: 5863b0602cbb02b479431400f4489c68, type: 3}
@@ -1679,6 +1688,10 @@ PrefabInstance:
       propertyPath: tomogochi
       value: 
       objectReference: {fileID: 514411354}
+    - target: {fileID: 3895091595274232656, guid: 23fea2b9a0380224c86352fee9a90fe3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7458572924473877974, guid: 23fea2b9a0380224c86352fee9a90fe3, type: 3}
       propertyPath: tamagochi
       value: 
@@ -1687,5 +1700,9 @@ PrefabInstance:
       propertyPath: tomogochi
       value: 
       objectReference: {fileID: 514411354}
+    - target: {fileID: 7839798463976986467, guid: 23fea2b9a0380224c86352fee9a90fe3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0911
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23fea2b9a0380224c86352fee9a90fe3, type: 3}

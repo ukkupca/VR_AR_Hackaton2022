@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1917535071774337497}
   - component: {fileID: 3703070515508522685}
   - component: {fileID: 3908331660015019792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
