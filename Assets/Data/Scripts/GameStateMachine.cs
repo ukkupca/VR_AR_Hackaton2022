@@ -170,6 +170,8 @@ public class GameStateMachine : MonoBehaviour
     public void setBattle(Tomogochi Tomy, Wolfy Enemy)
     {
         Debug.Log($"Start battle between {Tomy}/ {Enemy}");
+        Music.Stop();
+        Music.PlayOneShot(PanicMusic);
 
     }
 
@@ -178,5 +180,15 @@ public class GameStateMachine : MonoBehaviour
         Debug.Log($"Start battle between {playky}/ {Enemy}");
     }
 
-
+    public bool foodGoDown()
+    {
+        if(((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateManagery
       objectReference: {fileID: 0}
+    - target: {fileID: 3213891058507458076, guid: 9760eeafa1a525a4eb22c50737b2f8da, type: 3}
+      propertyPath: DaySkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: b6121f1ede3dbe848a9c9de2ef369c28, type: 2}
+    - target: {fileID: 3213891058507458076, guid: 9760eeafa1a525a4eb22c50737b2f8da, type: 3}
+      propertyPath: NightSkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: 7256c83dc8911a245b14ea6e977f9b1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9760eeafa1a525a4eb22c50737b2f8da, type: 3}
 --- !u!1001 &115838045
@@ -812,6 +820,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6083610667074580422, guid: 5863b0602cbb02b479431400f4489c68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.042
+      objectReference: {fileID: 0}
     - target: {fileID: 6835777622079628719, guid: 5863b0602cbb02b479431400f4489c68, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -871,7 +883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4193564656870929341, guid: bd585393840848849a82be6159b7e83f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5613373807733438241, guid: bd585393840848849a82be6159b7e83f, type: 3}
       propertyPath: m_IsActive

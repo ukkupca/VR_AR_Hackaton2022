@@ -53,6 +53,9 @@ namespace Data.Scripts
         public Image energyColor;
         public Image hpColor;
 
+        public float ingameTimer = 0;
+        float previousTime = 0;
+
         public enum TomyStates
         {
             Idle,
@@ -93,7 +96,11 @@ namespace Data.Scripts
         // Update is called once per frame
         void Update()
         {
-            switch(currentTomyState)
+
+            previousTime = ingameTimer;
+            ingameTimer += Time.deltaTime;
+
+            switch (currentTomyState)
             {
                 case TomyStates.Idle:
                     switch (currentTomyEmotion)
@@ -151,6 +158,12 @@ namespace Data.Scripts
                 case TomyStates.Walking:
 
                     break;
+            }
+
+            if (((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
+            {
+                FOOD -= 5;
+                Debug.Log("Food Yum Yum!");
             }
         }
 

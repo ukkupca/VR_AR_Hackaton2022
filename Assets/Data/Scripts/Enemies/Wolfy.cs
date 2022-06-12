@@ -131,47 +131,38 @@ public class Wolfy : MonoBehaviour
         }
     }
 
-   /*bool isHumanNearby()
-    {
-        /*float tempx = this.transform.position.x;
-        float tempy = this.transform.position.y;
-        if (Mathf.Sqrt(((tempx - posx) * (tempx - posx)) + ((tempy - posy) * (tempy - posy))) <= huntingRadius)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
+    /*bool isHumanNearby()
+     {
+         /*float tempx = this.transform.position.x;
+         float tempy = this.transform.position.y;
+         if (Mathf.Sqrt(((tempx - posx) * (tempx - posx)) + ((tempy - posy) * (tempy - posy))) <= huntingRadius)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }*/
 
-       /*f(Vector3.Distance(player.transform.position, this.transform.position) < huntingRadius)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+    /*f(Vector3.Distance(player.transform.position, this.transform.position) < huntingRadius)
+     {
+         return true;
+     }
+     else
+     {
+         return false;
+     }
 
-    }*/
+ }*/
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Entering Collision");
         Debug.Log(collision.gameObject.name);
-        if(collision.gameObject.TryGetComponent<Tomogochi>(out Tomogochi Tomy))
+
+        if (collision.gameObject.TryGetComponent<Tomogochi>(out Tomogochi Tomy))
         {
-            if (Tomy.currentTomyState == Tomogochi.TomyStates.Death)
-            {
-                if (collision.gameObject.TryGetComponent<Player>(out Player playky))
-                {
-                    GameStateMachine.instance.setSurvival(playky, this);
-                }
-            }
-            else
-            {
-                GameStateMachine.instance.setBattle(Tomy, this);
-            }
-            
+            GameStateMachine.instance.setBattle(Tomy, this);
         }
     }
 }
