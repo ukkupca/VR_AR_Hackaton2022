@@ -9,12 +9,14 @@
 /*                                                                           */
 /*--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+--*/
 
+using System;
 using System.Collections;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Data.Scripts
 {
@@ -413,6 +415,15 @@ namespace Data.Scripts
             }
 
             return false;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Fruit"))
+            {
+                IncreaseFood(3);
+                Destroy(collision.gameObject);
+            }
         }
     }
 }
