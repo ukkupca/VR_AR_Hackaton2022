@@ -11,21 +11,40 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tomogochi : MonoBehaviour
 {
     public string namey;
-    public int HP;
-    public int ENERGY;
-    public int FOOD;
-    public int FOODCAP;
-    public int STR;
-    public int AGI;
-    public int DEF;
+    private int HP;
+    private int HPCAP;
+    private int ENERGY;
+    private int ENERGYCAP;
+    private int FOOD;
+    private int FOODCAP;
+    
+    private int STR;
+    private int AGI;
+    private int DEF;
+    
+    [ReadOnly]
     public int LEVEL;
-    public int EXP;
-    public int NextLevel;
+    private int EXP;
+    private int NextLevel;
+    
+    public TextMeshProUGUI levelNumber;
+    public Slider foodSlider;
+    public Slider energySlider;
+    public Slider hpSlider;
+    public Slider expSlider;
+
+    public Image foodColor;
+    public Image energyColor;
+    public Image hpColor;
 
     public enum TomyStates
     {
@@ -60,6 +79,8 @@ public class Tomogochi : MonoBehaviour
 
         currentTomyEmotion = TomyEmotions.Born;
         // This part here is for the first ever init when we have done the thing for 
+
+        GenerateStartingStats();
     }
 
     // Update is called once per frame
@@ -71,13 +92,24 @@ public class Tomogochi : MonoBehaviour
             LEVEL += 1;
             int nextEXP = (int)Mathf.Pow(2, LEVEL) + 10 * LEVEL;
             NextLevel += nextEXP;
+            
+            int randHp = (int)Random.Range(0, 5);
+            HP += randHp;
+            HPCAP += randHp;
+            
+            int randEnergy = (int)Random.Range(0, 5);
+            ENERGY += randEnergy;
+            ENERGYCAP += randEnergy;
 
-            HP += (int)Random.Range(0, 5);
-            ENERGY += (int)Random.Range(0, 5);
+            int randFood = (int)Random.Range(0, 10);
+            FOOD += randFood;
+            FOODCAP += randFood;
+            
+            SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);
+            
             STR += (int)Random.Range(0, 5);
             AGI += (int)Random.Range(0, 5);
             DEF += (int)Random.Range(0, 5);
-            FOODCAP += (int)Random.Range(0, 10);
         }
 
         switch(currentTomyState)
@@ -139,9 +171,50 @@ public class Tomogochi : MonoBehaviour
 
                 break;
         }
-
-
     }
 
-    
+    void SetStats(int lvl, int food, int foodCap, int energy, int energyCap, int hp, int hpCap, int exp, int expDiff)
+    {
+        levelNumber.text = lvl.ToString();
+
+        foodSlider.maxValue = foodCap;
+        foodSlider.value = food;
+
+        foodColor.color = food > foodCap/2 ? Color.green : Color.red;
+
+        energySlider.maxValue = energyCap;
+        energySlider.value = energy;
+        
+        energyColor.color = energy > energyCap/2 ? Color.green : Color.red;
+
+        hpSlider.maxValue = hpCap;
+        hpSlider.value = hp;
+        
+        hpColor.color = hp > hpCap/2 ? Color.green : Color.red;
+
+        expSlider.maxValue = exp + expDiff;
+        expSlider.value = exp;
+    }
+
+    void GenerateStartingStats()
+    {
+        LEVEL = 0;
+        EXP = 0;
+        NextLevel = 213;
+        
+        HP = 12;
+        HPCAP = 12;
+        
+        ENERGY = 30;
+        ENERGYCAP = 30;
+        
+        FOOD = 60;
+        FOODCAP = 60;
+            
+        SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);
+
+        STR = 3;
+        AGI = 2;
+        DEF = 3;
+    }
 }
