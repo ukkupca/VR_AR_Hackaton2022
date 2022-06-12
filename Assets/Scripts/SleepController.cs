@@ -32,10 +32,27 @@ public class SleepController : MonoBehaviour
     {
         int startEnergy = tomogochi.ENERGY;
         int maxEnergy = tomogochi.ENERGYCAP;
+        bool updateEnergy = startEnergy < maxEnergy;
+        
+        int startHp = tomogochi.HP;
+        int maxHp = tomogochi.HPCAP;
+        
         yield return new WaitForSeconds(0.5f);
-        if (startEnergy < maxEnergy && startEnergy + 1 <= maxEnergy)
+        if (_isSleeping)
         {
-            tomogochi.IncreaseEnergy(1);
+            if (updateEnergy && startEnergy + 2 <= maxEnergy)
+            {
+                tomogochi.IncreaseEnergy(2);
+            }
+            else if (updateEnergy && startEnergy + 1 <= maxEnergy)
+            {
+                tomogochi.IncreaseEnergy(1);
+            }
+
+            if (startHp < maxHp && startHp + 1 <= maxHp)
+            {
+                tomogochi.IncreaseHp(1);
+            }
         }
     }
     

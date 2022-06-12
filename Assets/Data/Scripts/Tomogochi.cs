@@ -93,32 +93,6 @@ namespace Data.Scripts
         // Update is called once per frame
         void Update()
         {
-            // This part here takes care of the level up, and exp calculation
-            if(NextLevel <= 0)
-            {
-                LEVEL += 1;
-                int nextEXP = (int)Mathf.Pow(2, LEVEL) + 10 * LEVEL;
-                NextLevel += nextEXP;
-            
-                int randHp = (int)Random.Range(0, 5);
-                HP += randHp;
-                HPCAP += randHp;
-            
-                int randEnergy = (int)Random.Range(0, 5);
-                ENERGY += randEnergy;
-                ENERGYCAP += randEnergy;
-
-                int randFood = (int)Random.Range(0, 10);
-                FOOD += randFood;
-                FOODCAP += randFood;
-            
-                SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);
-            
-                STR += (int)Random.Range(0, 5);
-                AGI += (int)Random.Range(0, 5);
-                DEF += (int)Random.Range(0, 5);
-            }
-
             switch(currentTomyState)
             {
                 case TomyStates.Idle:
@@ -180,6 +154,31 @@ namespace Data.Scripts
             }
         }
 
+        private void LevelUp()
+        {
+            LEVEL += 1;
+            int nextEXP = (int)Mathf.Pow(2, LEVEL) + 10 * LEVEL;
+            NextLevel += nextEXP;
+
+            int randHp = (int)Random.Range(0, 5);
+            HP += randHp;
+            HPCAP += randHp;
+
+            int randEnergy = (int)Random.Range(0, 5);
+            ENERGY += randEnergy;
+            ENERGYCAP += randEnergy;
+
+            int randFood = (int)Random.Range(0, 10);
+            FOOD += randFood;
+            FOODCAP += randFood;
+
+            SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);
+
+            STR += (int)Random.Range(0, 5);
+            AGI += (int)Random.Range(0, 5);
+            DEF += (int)Random.Range(0, 5);
+        }
+
         void SetStats(int lvl, int food, int foodCap, int energy, int energyCap, int hp, int hpCap, int exp, int expDiff)
         {
             levelNumber.text = lvl.ToString();
@@ -235,11 +234,70 @@ namespace Data.Scripts
             {
                 return;
             }
-            
-            energySlider.maxValue = ENERGYCAP;
+
+            SetEnergyStats();
+        }
+
+        private void SetEnergyStats()
+        {
             energySlider.value = ENERGY;
-        
             energyColor.color = ENERGY > ENERGYCAP/2 ? Color.green : Color.red;
+        }
+        
+        public void IncreaseFood(int value)
+        {
+            if (FOOD < FOODCAP && FOOD + value <= FOODCAP)
+            {
+                FOOD += value;
+            }
+            else
+            {
+                return;
+            }
+
+            SetFoodStats();
+        }
+
+        private void SetFoodStats()
+        {
+            foodSlider.value = FOOD;
+            foodColor.color = FOOD > FOODCAP/2 ? Color.green : Color.red;
+        }
+        
+        public void IncreaseHp(int value)
+        {
+            if (HP < HPCAP && HP + value <= HPCAP)
+            {
+                HP += value;
+            }
+            else
+            {
+                return;
+            }
+
+            SetHpStats();
+        }
+
+        private void SetHpStats()
+        {
+            hpSlider.value = HP;
+            hpColor.color = HP > HPCAP/2 ? Color.green : Color.red;
+        }
+        
+        public void AddExp(int value)
+        {
+            int expCap = EXP + NextLevel;
+            if (EXP < expCap && EXP + value < expCap)
+            {
+                EXP += value;
+                hpSlider.value = EXP;
+            }
+            
+            if (EXP + value >= expCap)
+            {
+                EXP += value;
+                LevelUp();
+            }
         }
     }
 }

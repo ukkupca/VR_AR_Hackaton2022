@@ -72,7 +72,7 @@
       <updated>1654925971104</updated>
       <workItem from="1654925987830" duration="1212000" />
       <workItem from="1654983885751" duration="9804000" />
-      <workItem from="1654996689710" duration="2106000" />
+      <workItem from="1654996689710" duration="3433000" />
     </task>
     <servers />
   </component>
@@ -84,24 +84,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Data/Scripts/Tomogochi.cs</url>
-          <line>236</line>
-          <properties documentPath="C:\Users\vrstudents\Documents\GitHub\VR_AR_Hackaton2022\Assets\Data\Scripts\Tomogochi.cs" initialLine="236" containingFunctionPresentation="method 'IncreaseEnergy'">
-            <startOffsets>
-              <option value="6371" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6372" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
