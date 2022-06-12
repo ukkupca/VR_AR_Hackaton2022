@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6452292017405400583}
   - component: {fileID: -5131776854917683481}
   - component: {fileID: 1955220669524513721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tomogochi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,6 +70,7 @@ MonoBehaviour:
   foodColor: {fileID: 0}
   energyColor: {fileID: 0}
   hpColor: {fileID: 0}
+  ingameTimer: 0
   currentTomyState: 0
   currentTomyEmotion: 2
 --- !u!54 &6452292017405400583
@@ -106,7 +107,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 20
+    m_Bits: 48
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -129,10 +130,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955220669524513721}
+        m_TargetAssemblyTypeName: UnityEngine.AI.NavMeshAgent, UnityEngine
+        m_MethodName: set_isStopped
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1955220669524513721}
+        m_TargetAssemblyTypeName: UnityEngine.AI.NavMeshAgent, UnityEngine
+        m_MethodName: set_isStopped
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -232,6 +257,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5336874717713377222}
     m_Modifications:
+    - target: {fileID: 1074905056841419171, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342700970717424045, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284476614372009154, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3467851699220123360, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -276,13 +313,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3808139919822216049, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4281683080859636826, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
       propertyPath: m_Name
       value: Slime_03 King
       objectReference: {fileID: 0}
     - target: {fileID: 4281683080859636826, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281683080859636826, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226777814166338176, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742023579735404407, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8822947617055703412, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213536415483104170, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93df5c48d5e021040916b0e984d9b01a, type: 3}
@@ -321,6 +382,10 @@ PrefabInstance:
       value: Slime_03 Sprout
       objectReference: {fileID: 0}
     - target: {fileID: 7099655024501674456, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655024501674456, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -379,6 +444,38 @@ PrefabInstance:
     - target: {fileID: 7099655024501674457, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655024573255015, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655024979567537, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655025526803404, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655025754887303, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655025822241479, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655025931116241, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099655025966399804, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946147927628661871, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8760cc9eb30a2b340b14499b6e150dc4, type: 3}
@@ -412,13 +509,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5336874717713377222}
     m_Modifications:
+    - target: {fileID: 410155430891272545, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233165857305402812, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083056443832528022, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851737210385576660, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6173172085731050060, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
       propertyPath: m_Name
       value: Slime_03
       objectReference: {fileID: 0}
     - target: {fileID: 6173172085731050060, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173172085731050060, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492255836270218599, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6836556466655795446, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
       propertyPath: m_RootOrder
@@ -476,6 +597,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6929578755831029685, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962761626986233787, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa12db7f8a3f0714799c08ee4da865d6, type: 3}
 --- !u!4 &337483309921894085 stripped
@@ -508,6 +637,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5336874717713377222}
     m_Modifications:
+    - target: {fileID: 1133049861285851969, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1951564114070542236, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648376236285552310, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549964650012030818, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286268979643726068, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769512038960252743, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6118174221721670358, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -569,8 +722,20 @@ PrefabInstance:
       value: Slime_03 Leaf
       objectReference: {fileID: 0}
     - target: {fileID: 6891580169314388076, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891580169314388076, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7647819984296596885, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532752144766547355, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ae442726d1cf4428dacb34edd61ac4, type: 3}

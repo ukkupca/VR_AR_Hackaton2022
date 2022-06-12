@@ -176,6 +176,7 @@ namespace Data.Scripts
             if (((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
             {
                 FOOD -= 5;
+                foodSlider.value = FOOD;
                 Debug.Log("Food Yum Yum!");
             }
         }
@@ -234,13 +235,13 @@ namespace Data.Scripts
             EXP = 0;
             NextLevel = 213;
         
-            HP = 12;
+            HP = 3;
             HPCAP = 12;
         
-            ENERGY = 30;
+            ENERGY = 3;
             ENERGYCAP = 30;
         
-            FOOD = 60;
+            FOOD = 40;
             FOODCAP = 60;
             
             SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);

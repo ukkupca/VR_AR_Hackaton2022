@@ -21,37 +21,38 @@ public class SleepController : MonoBehaviour
     void StartSleep(SelectEnterEventArgs args)
     {
         _isSleeping = true;
-        while (_isSleeping)
-        {
-            StartCoroutine(Sleep());
-            
-        }
+        
+         StartCoroutine(Sleep());
     } 
     
     IEnumerator Sleep()
     {
-        int startEnergy = tomogochi.ENERGY;
-        int maxEnergy = tomogochi.ENERGYCAP;
-        bool updateEnergy = startEnergy < maxEnergy;
-        
-        int startHp = tomogochi.HP;
-        int maxHp = tomogochi.HPCAP;
-        
-        yield return new WaitForSeconds(0.5f);
-        if (_isSleeping)
+        while (_isSleeping)
         {
-            if (updateEnergy && startEnergy + 2 <= maxEnergy)
-            {
-                tomogochi.IncreaseEnergy(2);
-            }
-            else if (updateEnergy && startEnergy + 1 <= maxEnergy)
-            {
-                tomogochi.IncreaseEnergy(1);
-            }
+            int startEnergy = tomogochi.ENERGY;
+            int maxEnergy = tomogochi.ENERGYCAP;
+            bool updateEnergy = startEnergy < maxEnergy;
+        
+            int startHp = tomogochi.HP;
+            int maxHp = tomogochi.HPCAP;
+        
+            yield return new WaitForSeconds(5f);
 
-            if (startHp < maxHp && startHp + 1 <= maxHp)
+            if (_isSleeping)
             {
-                tomogochi.IncreaseHp(1);
+                if (updateEnergy && startEnergy + 2 <= maxEnergy)
+                {
+                    tomogochi.IncreaseEnergy(2);
+                }
+                else if (updateEnergy && startEnergy + 1 <= maxEnergy)
+                {
+                    tomogochi.IncreaseEnergy(1);
+                }
+
+                if (startHp < maxHp && startHp + 1 <= maxHp)
+                {
+                    tomogochi.IncreaseHp(1);
+                }
             }
         }
     }
