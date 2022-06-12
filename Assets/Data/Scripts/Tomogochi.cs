@@ -236,7 +236,7 @@ namespace Data.Scripts
             ENERGY = 3;
             ENERGYCAP = 30;
         
-            FOOD = 40;
+            FOOD = 30;
             FOODCAP = 60;
             
             SetStats(LEVEL, FOOD, FOODCAP, ENERGY, ENERGYCAP, HP, HPCAP, EXP, NextLevel);
@@ -421,7 +421,7 @@ namespace Data.Scripts
         {
             if (collision.gameObject.CompareTag("Fruit"))
             {
-                IncreaseFood(3);
+                IncreaseFood(2);
                 Destroy(collision.gameObject);
             }
         }
