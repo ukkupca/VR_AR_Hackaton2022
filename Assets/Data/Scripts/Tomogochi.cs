@@ -87,11 +87,6 @@ namespace Data.Scripts
         public TomyStates currentTomyState;
         public TomyEmotions currentTomyEmotion;
 
-        private void Awake()
-        {
-            xrRig = GameObject.Find("XR Rig");
-        }
-
         // Start is called before the first frame update
         void Start()
         {
@@ -175,10 +170,8 @@ namespace Data.Scripts
 
             if (((int)ingameTimer % 100 == 0) && ((int)previousTime != (int)ingameTimer))
             {
-                FOOD -= 5;
-                foodSlider.value = FOOD;
-                Debug.Log("Food Yum Yum!");
-            }
+                DecreaseFood(5);
+            } 
         }
 
         private void LevelUp()
@@ -264,6 +257,20 @@ namespace Data.Scripts
 
             SetEnergyStats();
         }
+        
+        public void DecreaseEnergy(int value)
+        {
+            if (ENERGY > 0 && ENERGY - value >= 0)
+            {
+                ENERGY -= value;
+            }
+            else
+            {
+                ENERGY = 0;
+            }
+
+            SetEnergyStats();
+        }
 
         private void SetEnergyStats()
         {
@@ -284,6 +291,20 @@ namespace Data.Scripts
 
             SetFoodStats();
         }
+        
+        public void DecreaseFood(int value)
+        {
+            if (FOOD > 0 && FOOD - value >= 0)
+            {
+                FOOD -= value;
+            }
+            else
+            {
+                FOOD = 0;
+            }
+
+            SetFoodStats();
+        }
 
         private void SetFoodStats()
         {
@@ -300,6 +321,20 @@ namespace Data.Scripts
             else
             {
                 return;
+            }
+
+            SetHpStats();
+        }
+        
+        public void DecreaseHp(int value)
+        {
+            if (HP > 0 && HP - value >= 0)
+            {
+                HP -= value;
+            }
+            else
+            {
+                HP = 0;
             }
 
             SetHpStats();
