@@ -25,7 +25,7 @@ public class ZoneController : MonoBehaviour
         {
             for (int i = 0; i < numberOfZones; i++)
             {
-                if (tomogochi.LEVEL - 1 >= i)
+                if (tomogochi.LEVEL >= i)
                 {
                     zoneUnlocked[i] = true;
                     barrier.transform.position = new Vector3(barrier.transform.position.x, zoneRadiuses[i], barrier.transform.position.z);

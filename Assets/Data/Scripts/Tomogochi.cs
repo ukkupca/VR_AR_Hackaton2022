@@ -9,16 +9,21 @@
 /*                                                                           */
 /*--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+--*/
 
+using System.Collections;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 namespace Data.Scripts
 {
     public class Tomogochi : MonoBehaviour
     {
-       
+        public GameObject xrRig = default;
+        public NavMeshAgent navMeshAgent = default;
+        private int destinationAttempts = 0;
+
         public string namey;
         [HideInInspector]
         public int HP;
@@ -82,6 +87,11 @@ namespace Data.Scripts
         public TomyStates currentTomyState;
         public TomyEmotions currentTomyEmotion;
 
+        private void Awake()
+        {
+            xrRig = GameObject.Find("XR Rig");
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -91,14 +101,17 @@ namespace Data.Scripts
             // This part here is for the first ever init when we have done the thing for 
 
             GenerateStartingStats();
+
+            StartCoroutine(FollowPlayer());
         }
 
         // Update is called once per frame
         void Update()
         {
-
             previousTime = ingameTimer;
             ingameTimer += Time.deltaTime;
+            
+            TargetReached();
 
             switch (currentTomyState)
             {
@@ -311,6 +324,59 @@ namespace Data.Scripts
                 EXP += value;
                 LevelUp();
             }
+        }
+
+        private IEnumerator FollowPlayer()
+        {
+            while (xrRig != null)
+            {
+                navMeshAgent.isStopped = false;
+                SetDestination();
+                yield return new WaitForSeconds(1f);
+            }
+
+            yield return null;
+        }
+
+        private void SetDestination()
+        {
+            Vector3 playerToEnemy = xrRig.transform.position - transform.position;
+
+            Vector3 destination = xrRig.transform.position;
+
+            NavMeshPath path = new NavMeshPath();
+            navMeshAgent.CalculatePath(destination, path);
+            if (path.status == NavMeshPathStatus.PathComplete)
+            {
+                destinationAttempts = 0;
+                navMeshAgent.SetDestination(destination);
+            }
+            else
+            {
+                if (destinationAttempts == 10)
+                {
+                    //Debug.LogError("Destination " + destination.ToString() + "was not reachable for " + gameObject.name + " 10 times!");
+                    return;
+                }
+
+                destinationAttempts++;
+                //Debug.LogWarning("Destination " + destination.ToString() + " was not reachable for " + gameObject.name);
+
+                SetDestination();
+            }
+        }
+
+        private bool TargetReached()
+        {
+            if (!navMeshAgent.pathPending)
+            {
+                if (navMeshAgent.remainingDistance <= 1f)
+                {
+                    navMeshAgent.isStopped = true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8402718973598660194}
   - component: {fileID: 6452292017405400583}
   - component: {fileID: -5131776854917683481}
+  - component: {fileID: 1955220669524513721}
   m_Layer: 0
   m_Name: Tomogochi
   m_TagString: Untagged
@@ -50,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b1ad4888881e34283a53701853be7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xrRig: {fileID: 0}
+  navMeshAgent: {fileID: 1955220669524513721}
   namey: Kittak
   HP: 5
   HPCAP: 0
@@ -200,6 +203,28 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!195 &1955220669524513721
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633515091289267262}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &5575489837823395807
 PrefabInstance:
   m_ObjectHideFlags: 0
