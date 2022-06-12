@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data.Scripts;
 using UnityEngine;
 
 public class Wolfy : MonoBehaviour

@@ -1,3 +1,4 @@
+using Data.Scripts;
 using UnityEngine;
 
 public class ZoneController : MonoBehaviour
